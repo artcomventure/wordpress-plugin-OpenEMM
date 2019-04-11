@@ -1,0 +1,132 @@
+# Copyright (C) 2019 artcom venture GmbH
+# This file is distributed under the MIT License.
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenEMM\n"
+"Report-Msgid-Bugs-To: info@artcom-venture.de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language-Team: artcom venture GmbH <info@artcom-venture.de>\n"
+"Language: de_DE\n"
+
+msgid "%s is required."
+msgstr "%s wird benötigt."
+
+msgid "<i>All</i> the following values can be overridden wherever you insert the shortcode. Even the mailing <code>list=\"\"</code>."
+msgstr "<i>Alle</i> folgenden Werte können überschrieben werden, an denen der Shortcode einfügt wird. Sogar die Mailing-Liste (<code>list=\"\" </code>)."
+
+msgid "Already Subscribed"
+msgstr "Bereits abonniert"
+
+msgid "An error has occurred. That should not have happened! Please try again."
+msgstr "Ein Fehler ist aufgetreten. Das hätte nicht passieren dürfen! Bitte versuche es erneut."
+
+msgid "Body"
+msgstr "Nachricht"
+
+msgid "Broken Confirmation Link"
+msgstr "Kaputter Bestätigungslink"
+
+msgid "Confirm your newsletter subscription from %s"
+msgstr "Bestätigen Sie Ihr Newsletter-Abonnement von %s"
+
+msgid "Confirmed"
+msgstr "Bestätigt"
+
+msgid "Determine the fields (and their order) that the user can/must fill in for his newsletter subscription."
+msgstr "Bestimmen Sie die Felder (und deren Reihenfolge), die der Benutzer für sein Newsletter-Abonnement ausfüllen kann/muss."
+
+msgid "disabled"
+msgstr "deaktiviert"
+
+msgid "Double Opt In Email"
+msgstr "Double Opt In E-Mail"
+
+msgid "Email Address"
+msgstr "E-Mail-Adresse"
+
+msgid "First Name"
+msgstr "Vorname"
+
+msgid "For subscription to multiple mailing lists separate IDs with comma."
+msgstr "Für das Abonnieren mehrerer Mailinglisten müssen die IDs durch Kommas getrennt werden."
+
+msgid "Form"
+msgstr "Formular"
+
+msgid "Gender"
+msgstr "Geschlecht"
+
+msgid "Last Name"
+msgstr "Nachname"
+
+msgid "Mail Type"
+msgstr "Mail-Typ"
+
+msgid "Mailing List ID"
+msgstr "Mailing-Listen-ID"
+
+msgid "Messages"
+msgstr "Nachrichten"
+
+msgid "Mr."
+msgstr "Herr"
+
+msgid "Mrs."
+msgstr "frau"
+
+msgid "OpenEMM Settings"
+msgstr "OpenEMM Einstellungen"
+
+msgid "Please check your email mailbox to confirm your newsletter subscription."
+msgstr "Bitte überprüfen Sie Ihr E-Mail-Postfach, um Ihr Newsletter-Abonnement zu bestätigen."
+
+msgid "Possible values: %s"
+msgstr "Mögliche Werte: %s"
+
+msgid "required"
+msgstr "erforderlich"
+
+msgid "Sender"
+msgstr "Absender"
+
+msgid "Subject"
+msgstr "Betreff"
+
+msgid "Subscribe"
+msgstr "Abonnieren"
+
+msgid "Text Widget"
+msgstr "Text-Widget"
+
+msgid "The confirmation link is broken. Please subscribe to our newsletter again."
+msgstr "Der Bestätigungslink ist kaputt. Bitte abonnieren Sie unseren Newsletter erneut."
+
+msgid "This email address already subscribed to our newsletter."
+msgstr "Diese E-Mail-Adresse hat unseren Newsletter bereits abonniert."
+
+msgid "This value"
+msgstr "Dieser Wert"
+
+msgid "To display the subscription form insert the shortcode %s into the editor e.g. by using the %s."
+msgstr "Um das Abonnementformular anzuzeigen, fügen Sie den Shortcode %s in den Editor ein, z.B. im %s."
+
+msgid "Unable to load webservice at %s"
+msgstr "Webservice kann unter %s nicht geladen werden"
+
+msgid "URL to the OpenEMM webservice file."
+msgstr "URL zur OpenEMM-Webservice-Datei."
+
+msgid "Use %s to add the (surprise, surprise ;) confirmation link. Otherwise its added at the end of the email."
+msgstr "Verwenden Sie %s, um den Bestätigungslink hinzuzufügen. Andernfalls wird er am Ende der E-Mail angefügt."
+
+msgid "User must confirm subscription by confirm email."
+msgstr "Der Benutzer muss das Abonnement per E-Mail bestätigen."
+
+msgid "Wrong credentials. Please check webservice's %s and %s."
+msgstr "Falsche Anmeldedaten. Bitte überprüfen Sie %s und %s vom Webservice."
+
+msgid "You successfully confirmed your newsletter subscription. Thank you for subscribing our newsletter!"
+msgstr "Sie haben Ihr Newsletter-Abonnement erfolgreich bestätigt. Vielen Dank, dass Sie unseren Newsletter abonniert haben!"

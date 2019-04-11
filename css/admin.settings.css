@@ -1,0 +1,76 @@
+select.disabled
+{
+    pointer-events: none;
+}
+
+h2.title span
+{
+    font-weight: normal;
+}
+
+.copy
+{
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+#openemm-settings-form .nav-tab-wrapper .nav-tab.error
+{
+    color: #dd3d36;
+}
+
+#openemm-settings-form > .notice
+{
+    margin: 15px 0 0;
+}
+
+#openemm-settings-form td[colspan='2']:first-child:last-child
+{
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+#openemm-settings-form td:nth-child(2):not(:last-of-type)
+{
+    width: 0;
+}
+
+#openemm-settings-form label.required:after
+{
+    font-weight: normal;
+    content: ' *';
+    color: #dd3d36;
+}
+
+#form-settings
+{
+    margin-top: 1em;
+}
+
+#form-settings th,
+#form-settings td
+{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#form-settings .dashicons-move
+{
+    width: auto;
+    height: auto;
+    cursor: move;
+    opacity: .15;
+}
+
+#form-settings .dashicons-move,
+#form-settings .dashicons-move:before
+{
+    font-size: 1rem;
+    line-height: 1.2;
+}
+
+#form-settings tr:hover .dashicons-move
+{
+    opacity: 1;
+}

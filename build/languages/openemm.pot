@@ -1,0 +1,153 @@
+# Copyright (C) 2019 artcom venture GmbH
+# This file is distributed under the MIT License.
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenEMM\n"
+"Report-Msgid-Bugs-To: info@artcom-venture.de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language-Team: artcom venture GmbH <info@artcom-venture.de>\n"
+"Language: de_DE\n"
+
+msgid "%s is required."
+msgstr ""
+
+msgid "<i>All</i> the following values can be overridden wherever you insert the shortcode. Even the mailing <code>list=\"\"</code>."
+msgstr ""
+
+msgid "Already Subscribed"
+msgstr ""
+
+msgid "An error has occurred. That should not have happened! Please try again."
+msgstr ""
+
+msgid "Body"
+msgstr ""
+
+msgid "Broken Confirmation Link"
+msgstr ""
+
+msgid "Confirm your newsletter subscription from %s"
+msgstr ""
+
+msgid "Confirmed"
+msgstr ""
+
+msgid "Determine the fields (and their order) that the user can/must fill in for his newsletter subscription."
+msgstr ""
+
+msgid "disabled"
+msgstr ""
+
+msgid "Double Opt In Email"
+msgstr ""
+
+msgid "Email Address"
+msgstr ""
+
+msgid "First Name"
+msgstr ""
+
+msgid "For subscription to multiple mailing lists separate IDs with comma."
+msgstr ""
+
+msgid "Form"
+msgstr ""
+
+msgid "Gender"
+msgstr ""
+
+msgid "HTML"
+msgstr ""
+
+msgid "Last Name"
+msgstr ""
+
+msgid "Mail Type"
+msgstr ""
+
+msgid "Mailing List ID"
+msgstr ""
+
+msgid "Messages"
+msgstr ""
+
+msgid "Mr."
+msgstr ""
+
+msgid "Mrs."
+msgstr ""
+
+msgid "Offline-HTML"
+msgstr ""
+
+msgid "OpenEMM"
+msgstr ""
+
+msgid "OpenEMM Settings"
+msgstr ""
+
+msgid "optional"
+msgstr ""
+
+msgid "Please check your email mailbox to confirm your newsletter subscription."
+msgstr ""
+
+msgid "Possible values: %s"
+msgstr ""
+
+msgid "required"
+msgstr ""
+
+msgid "Sender"
+msgstr ""
+
+msgid "Subject"
+msgstr ""
+
+msgid "Subscribe"
+msgstr ""
+
+msgid "Text"
+msgstr ""
+
+msgid "Text Widget"
+msgstr ""
+
+msgid "The confirmation link is broken. Please subscribe to our newsletter again."
+msgstr ""
+
+msgid "This email address already subscribed to our newsletter."
+msgstr ""
+
+msgid "This value"
+msgstr ""
+
+msgid "To display the subscription form insert the shortcode %s into the editor e.g. by using the %s."
+msgstr ""
+
+msgid "Unable to load webservice at %s"
+msgstr ""
+
+msgid "URL to the OpenEMM webservice file."
+msgstr ""
+
+msgid "Use %s to add the (surprise, surprise ;) confirmation link. Otherwise its added at the end of the email."
+msgstr ""
+
+msgid "User must confirm subscription by confirm email."
+msgstr ""
+
+msgid "Webservice"
+msgstr ""
+
+msgid "Wrong credentials. Please check webservice's %s and %s."
+msgstr ""
+
+msgid "WSDL URL"
+msgstr ""
+
+msgid "You successfully confirmed your newsletter subscription. Thank you for subscribing our newsletter!"
+msgstr ""

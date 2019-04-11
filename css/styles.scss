@@ -1,0 +1,121 @@
+@import "base";
+
+.openemm-form {
+  .form-item {
+    margin-bottom: 1em;
+
+    &.required label:after {
+      content: ' *';
+      color: #dd3d36;
+    }
+
+    &.error {
+      input[type="text"],
+      select {
+        border-left-color: $error;
+        border-bottom-color: $error;
+      }
+    }
+  }
+
+  label {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  input[type="text"],
+  select {
+    width: 100%
+  }
+
+  .note, .message {
+    border-left: 4px solid currentColor;
+    padding-left: .35em;
+
+    &.success {
+      color: $success;
+    }
+
+    &.error {
+      color: $error;
+    }
+  }
+
+  .note {
+    margin: 0;
+    font-size: 0.71111em;
+    border-width: 1px;
+  }
+
+  button {
+    position: relative;
+
+    .spinner {
+      background: url(/wp-admin/images/spinner.gif) no-repeat;
+      background-size: 20px 20px;
+      display: inline-block;
+      visibility: hidden;
+      opacity: .7;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: calc(50% - 10px);
+      right: -30px;
+      pointer-events: none;
+
+      @media print,
+      (-webkit-min-device-pixel-ratio: 1.25),
+      (min-resolution: 120dpi) {
+        background-image: url(/wp-admin/images/spinner-2x.gif);
+      }
+    }
+  }
+
+  &.submitting {
+    pointer-events: none;
+
+    button .spinner {
+      visibility: visible;
+    }
+  }
+}
+
+#openemm .message {
+  text-align: center;
+
+  p {
+    padding: 1.5em;
+    margin: 0 auto;
+
+    &:before {
+      font-family: dashicons;
+      font-size: 5em;
+      pointer-events: none;
+      display: block;
+      line-height: 1;
+    }
+  }
+
+  &.success p {
+    background-color: $success;
+    @if lightness($success) < 80 {
+      color: #fff;
+    }
+
+    &:before {
+      content: "\f147";
+    }
+  }
+
+  &.error p {
+    background-color: $error;
+    @if lightness($error) < 80 {
+      color: #fff;
+    }
+
+    &:before {
+      content: "\f335";
+    }
+  }
+}

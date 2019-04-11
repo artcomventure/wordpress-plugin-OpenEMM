@@ -1,0 +1,67 @@
+@import "base";
+
+select.disabled {
+  pointer-events: none;
+}
+
+h2.title span {
+  font-weight: normal;
+}
+
+.copy {
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+#openemm-settings-form {
+  .nav-tab-wrapper .nav-tab.error {
+    color: $error;
+  }
+
+  > .notice {
+    margin: 15px 0 0;
+  }
+
+  td {
+    &[colspan="2"]:first-child:last-child {
+      padding-right: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+    }
+
+    &:nth-child(2):not(:last-of-type) {
+      width: 0;
+    }
+  }
+
+  label.required:after {
+    content: " *";
+    font-weight: normal;
+    color: $error;
+  }
+}
+
+#form-settings {
+  margin-top: 1em;
+
+  th, td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .dashicons-move {
+    cursor: move;
+    width: auto;
+    height: auto;
+    opacity: .15;
+
+    &, &:before {
+      font-size: 1rem;
+      line-height: 1.2;
+    }
+  }
+
+  tr:hover .dashicons-move {
+    opacity: 1;
+  }
+}
