@@ -45,7 +45,18 @@ _We test our plugin through its paces, but we advise you to take all safety prec
 Don't hesitate! [Issues](https://github.com/artcomventure/wordpress-plugin-OpenEMM/issues) welcome.
 == Changelog ==
 
-= 1.0.0 - 2019-04-10 =
+= 1.1.1 - 2019-04-12 =
+**Added**
+
+* Editable button (text).
+
+= 1.1.0 - 2019-04-11 =
+**Updated**
+
+* New db column (data).
+* Option structure.
+
+= 1.0.0 - 2019-04-11 =
 **Added**
 
 * Initial file commit

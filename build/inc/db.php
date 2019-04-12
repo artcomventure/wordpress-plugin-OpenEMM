@@ -1,93 +1,5 @@
 <?php
 
-global $openemm_db_version;
-$openemm_db_version = '1.1';
-
-/**
- * Install db scheme.
- * https://codex.wordpress.org/Creating_Tables_with_Plugins
- */
-//register_activation_hook( OPENEMM_PLUGIN_FILE, 'openemm_install' );
-function openemm_install( $db_version = 0 ) {
-	global $wpdb, $openemm_db_version;
-	$db_version = $db_version ?: $openemm_db_version;
-
-    $table_name = openemm_get_table_name();
-	$charset_collate = $wpdb->get_charset_collate();
-
-    switch ( $db_version ) {
-	    case 1:
-		    $sql = "CREATE TABLE " . $table_name . " (
-                id mediumint(9) unsigned NOT NULL AUTO_INCREMENT,
-                email VARCHAR(100) NOT NULL,
-                hash VARCHAR(55) DEFAULT '' NOT NULL,
-                registered datetime DEFAULT CURRENT_TIMESTAMP NOT NULL,
-                confirmed datetime NOT NULL default '0000-00-00 00:00:00',
-                UNIQUE KEY id (id),
-                PRIMARY KEY (id)
-            ) $charset_collate;";
-	    	break;
-
-	    // add 'data' column
-	    case 1.1:
-		    $sql = "CREATE TABLE " . $table_name . " (
-                id mediumint(9) unsigned NOT NULL AUTO_INCREMENT,
-                email VARCHAR(100) NOT NULL,
-                data longtext DEFAULT '' NOT NULL,
-                hash VARCHAR(55) DEFAULT '' NOT NULL,
-                registered datetime DEFAULT CURRENT_TIMESTAMP NOT NULL,
-                confirmed datetime NOT NULL default '0000-00-00 00:00:00',
-                UNIQUE KEY id (id),
-                PRIMARY KEY (id)
-            ) $charset_collate;";
-
-		    // 'convert' options
-		    $settings = openemm_get_settings();
-		    $settings['mailinglist'] = get_option( 'openemm_mailing_list_id', $settings['mailinglist'] );
-		    $settings['webservice'] = array(
-		    	'wsdlUrl' => get_option( 'openemm_url', $settings['webservice']['wsdlUrl'] ),
-		    	'username' => get_option( 'openemm_username', $settings['webservice']['username'] ),
-		    	'password' => get_option( 'openemm_password', $settings['webservice']['password'] ),
-		    );
-		    $settings['email'] = array(
-		    	'sender' => get_option( 'openemm_email_sender', $settings['email']['sender'] ),
-			    'subject' => get_option( 'openemm_email_subject', $settings['email']['subject'] ),
-			    'body' => get_option( 'openemm_email_message', $settings['email']['body'] )
-		    );
-
-		    // save option
-		    update_option('openemm', $settings );
-
-		    // cleanup
-		    delete_option( 'openemm_mailing_list_id' );
-		    delete_option( 'openemm_url' );
-		    delete_option( 'openemm_username' );
-		    delete_option( 'openemm_password' );
-		    delete_option( 'openemm_email_sender' );
-		    delete_option( 'openemm_email_subject' );
-		    delete_option( 'openemm_email_message' );
-	    	break;
-    }
-
-    if ( isset($sql) ) {
-	    require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-	    dbDelta( $sql );
-    }
-
-	update_option( 'openemm_db_version', $db_version );
-}
-
-/**
- * Db updates.
- */
-add_action( 'plugins_loaded', 'openemm_db_update' );
-function openemm_db_update() {
-	global $openemm_db_version;
-	if ( openemm_get_db_version() != $openemm_db_version ) {
-		openemm_install( $openemm_db_version );
-//		flush_rewrite_rules();
-	}
-}
 
 /**
  * Get OpenEMM table name.
@@ -99,11 +11,17 @@ function openemm_get_table_name() {
 }
 
 /**
- * Get current installed db version.
+ * Get current actual/target version.
+ * @param string $type
  * @return mixed
  */
-function openemm_get_db_version() {
-	return get_site_option( 'openemm_db_version', 0 );
+function openemm_get_version( $type = 'actual' ) {
+	if ( $type == 'target' ) {
+		if ( !function_exists('get_plugin_data' ) ) require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		return get_plugin_data( WP_PLUGIN_DIR . '/' . OPENEMM_PLUGIN_BASENAME )['Version'];
+	}
+
+	return get_site_option( 'openemm_version', get_site_option( 'openemm_db_version', 0 ) );
 }
 
 /**
@@ -173,7 +91,7 @@ function openemm_add_subscriber( $email, $data = array() ) {
 	    if ( strpos( $message, '[openemm_confirmation_link]' ) === false ) $message .= "\n\n[openemm_confirmation_link]";
 	    $message = str_replace('[openemm_confirmation_link]', add_query_arg( array( 'hash' => $hash ), home_url( 'openemm/confirm' ) ), $message);
 
-	    $headers = 'From: ' . ($settings['email']['subject'] ? $settings['email']['subject'] : get_bloginfo( 'title' ) . '<' . get_option( 'admin_email' ) . '>' ) . "\r\n";
+	    $headers = 'From: ' . ($settings['email']['subject'] ? $settings['email']['subject'] : get_bloginfo( 'title' ) . ' <' . get_option( 'admin_email' ) . '>' ) . "\r\n";
 
 	    wp_mail( $email, $subject, trim($message), $headers );
 

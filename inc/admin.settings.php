@@ -136,13 +136,19 @@ add_action( 'admin_menu', function() {
 					        <?php openemm_get_label( $field ); ?>
                         </th>
                         <td>
-                            <select name="openemm[form][<?php echo $field; ?>]"<?php echo $field == 'email' ? ' class="disabled" readonly="readonly"' : ''; ?>>
-						        <?php foreach ( array( 'disabled', 'optional', 'required' ) as $value => $label ): ?>
-                                    <option value="<?php echo $value; ?>"<?php selected( $value, $option ) ?>>
-								        <?php _e( $label, 'openemm' ); ?>
-                                    </option>
-						        <?php endforeach; ?>
-                            </select>
+                            <?php if ( $field == 'button' ): ?>
+                                <input type="text" class="regular-text" name="openemm[form][<?php echo $field; ?>]"
+                                       value="<?php echo $settings['form'][$field]; ?>"
+                                       placeholder="<?php _e( 'Subscribe', 'openemm' ); ?>" />
+                            <?php else: ?>
+                                <select name="openemm[form][<?php echo $field; ?>]"<?php echo $field == 'email' ? ' class="disabled" readonly="readonly"' : ''; ?>>
+                                    <?php foreach ( array( 'disabled', 'optional', 'required' ) as $value => $label ): ?>
+                                        <option value="<?php echo $value; ?>"<?php selected( $value, $option ) ?>>
+                                            <?php _e( $label, 'openemm' ); ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            <?php endif; ?>
                         </td>
                         <?php if ( false ): ?>
                         <td>
@@ -190,7 +196,7 @@ add_action( 'admin_menu', function() {
                         <td>
                             <input type="text" class="large-text" name="openemm[email][sender]"
                                    value="<?php echo $settings['email']['sender']; ?>"
-                                   placeholder="<?php echo get_bloginfo( 'title' ) . '<' . get_option( 'admin_email' ) . '>'; ?>" />
+                                   placeholder="<?php echo get_bloginfo( 'title' ) . ' <' . get_option( 'admin_email' ) . '>'; ?>" />
                         </td>
                     </tr>
 

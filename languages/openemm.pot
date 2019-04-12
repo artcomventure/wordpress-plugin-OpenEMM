@@ -29,6 +29,9 @@ msgstr ""
 msgid "Broken Confirmation Link"
 msgstr ""
 
+msgid "Button"
+msgstr ""
+
 msgid "Confirm your newsletter subscription from %s"
 msgstr ""
 

@@ -12,6 +12,8 @@ function openemm_form( $settings ) {
 		// validate form
 		$errors = $data = array();
 		foreach ( array_filter( $settings['form'] ) as $field => $status ) {
+		    if ( $field == 'button' ) continue;
+
 			$_POST[$field] = trim($_POST[$field]);
 			$data[$field] = $_POST[$field];
 
@@ -40,6 +42,14 @@ function openemm_form( $settings ) {
 
 <form class="openemm-form" method="post" action="<?php echo add_query_arg( array( 'destination' => $wp->request ), home_url( 'openemm/subscribe' ) ) ?>">
 	<?php foreach ( array_filter( $settings['form'] ) as $field => $status ) {
+	    if ( $field == 'button' ) { ?>
+            <button>
+			    <?php echo $status ? $status : __( 'Subscribe', 'openemm' ); ?>
+                <span class="spinner"></span>
+            </button>
+        <?php continue;
+	    }
+
 		$options = array(
 		    'required' => $status > 1,
             'error' => empty($errors[$field]) ? '' : $errors[$field],
@@ -86,11 +96,6 @@ function openemm_form( $settings ) {
 
     <input type="hidden" name="form" value="<?php echo (new OpenEMMCrypt)->encrypt(maybe_serialize($settings['form'])); ?>" />
     <input type="hidden" name="hash" value="<?php echo $hash; ?>" />
-
-    <button>
-        <?php _e( 'Subscribe', 'openemm' ); ?>
-        <span class="spinner"></span>
-    </button>
 
     <?php if ( !empty($message) ): ?>
         <p class="message <?php echo $message['type']; ?>"><?php echo $message['message']; ?></p>

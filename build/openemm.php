@@ -4,7 +4,7 @@
  * Plugin Name: OpenEMM
  * Plugin URI: https://github.com/artcomventure/wordpress-plugin-openemm
  * Description: OpenEMM Newsletter subscription.
- * Version: 1.0.0
+ * Version: 1.1.1
  * Text Domain: openemm
  * Author: artcom venture GmbH
  * Author URI: http://www.artcom-venture.de/
@@ -42,7 +42,7 @@ function openemm_get_settings( $form = array() ) {
 		'mailinglist' => '',
 
 		'webservice' => array( 'wsdlUrl' => '', 'username' => '', 'password' => '' ),
-		'form' => array( 'gender' => 0, 'title' => 0, 'email' => 0, 'firstname' => 0, 'lastname' => 0, 'mailtype' => 0 ),
+		'form' => array( 'gender' => 0, 'title' => 0, 'email' => 0, 'firstname' => 0, 'lastname' => 0, 'mailtype' => 0, 'button' => '' ),
 		'messages' => array( 'double_opt_in' => '', 'broken_confirmation_link' => '', 'already_subscribed' => '', 'confirmed' => '' ),
 		'email' => array( 'sender' => '', 'subject' => '', 'body' => '' )
 	);
@@ -77,9 +77,10 @@ function openemm_get_settings( $form = array() ) {
 	// email is mandatory
     $settings['form']['email'] = 2;
     // wrong value => disable
-	$settings['form'] = array_map( function( $setting ) {
-		return in_array( intval($setting), array(0,1,2) ) ? intval($setting) : 0;
-	}, $settings['form'] );
+	$settings['form'] = array_combine( array_keys($settings['form']), array_map( function( $value, $field ) {
+		if ( $field == 'button' ) return $value;
+		return in_array( intval($value), array(0,1,2) ) ? intval($value) : 0;
+	}, $settings['form'], array_keys($settings['form']) ));
 
     return $settings;
 }
@@ -224,6 +225,7 @@ function openemm_doing_ajax() {
 }
 
 // includes
+include( OPENEMM_PLUGIN_DIR . 'inc/install.php' );
 include( OPENEMM_PLUGIN_DIR . 'inc/cypher.php' );
 include( OPENEMM_PLUGIN_DIR . 'inc/rewrite.php' );
 include( OPENEMM_PLUGIN_DIR . 'inc/db.php' );
@@ -231,9 +233,15 @@ include( OPENEMM_PLUGIN_DIR . 'inc/admin.settings.php' );
 include( OPENEMM_PLUGIN_DIR . 'inc/theme.php' );
 include( OPENEMM_PLUGIN_DIR . 'inc/shortcode.php' );
 
-/**
- * Remove (maybe) update notification.
- */
+// maybe flush rewrite rules
+add_action( 'init', function() {
+	if ( get_option( 'openemm_flush_rewrite_rules', 0 ) ) {
+		delete_option( 'openemm_flush_rewrite_rules' );
+		flush_rewrite_rules();
+	}
+} );
+
+// remove (maybe) update notification
 add_filter( 'site_transient_update_plugins', function( $value ) {
 	if ( isset( $value->response[OPENEMM_PLUGIN_BASENAME] ) ) {
 		unset( $value->response[OPENEMM_PLUGIN_BASENAME] );
@@ -242,9 +250,7 @@ add_filter( 'site_transient_update_plugins', function( $value ) {
 	return $value;
 } );
 
-/**
- * Change details link to GitHub repository.
- */
+// change details link to GitHub repository
 add_filter( 'plugin_row_meta', function( $links, $file ) {
 	if ( OPENEMM_PLUGIN_BASENAME == $file ) {
 		$plugin_data = get_plugin_data( WP_PLUGIN_DIR . '/' . $file );
@@ -254,18 +260,3 @@ add_filter( 'plugin_row_meta', function( $links, $file ) {
 
 	return $links;
 }, 10, 2 );
-
-/**
- * Remove all traces.
- */
-register_deactivation_hook( OPENEMM_PLUGIN_FILE, 'openemm_uninstall' );
-function openemm_uninstall() {
-	$table_name = openemm_get_table_name();
-	$sql = "DROP TABLE IF EXISTS $table_name";
-
-	global $wpdb;
-	$wpdb->query( $sql );
-
-	delete_option('openemm_db_version');
-	delete_option('openemm');
-}
