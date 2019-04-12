@@ -9,13 +9,6 @@
     color: #dd3d36;
 }
 
-.openemm-form .form-item.error input[type='text'],
-.openemm-form .form-item.error select
-{
-    border-bottom-color: #dd3d36; 
-    border-left-color: #dd3d36;
-}
-
 .openemm-form label
 {
     position: absolute;
@@ -27,13 +20,6 @@
 .openemm-form select
 {
     width: 100%;
-}
-
-.openemm-form .note,
-.openemm-form .message
-{
-    padding-left: .35em;
-    border-left: 4px solid currentColor;
 }
 
 .openemm-form .note.success,
@@ -52,7 +38,12 @@
 {
     font-size: .71111em;
     margin: 0;
-    border-width: 1px;
+}
+
+.openemm-form .message
+{
+    padding-left: .56em;
+    border-left: 4px solid currentColor;
 }
 
 .openemm-form button

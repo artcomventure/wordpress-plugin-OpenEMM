@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.2 - 2019-04-12
+**Changed**
+
+* Messages styles.
+
 ## 1.1.1 - 2019-04-12
 **Added**
 

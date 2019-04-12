@@ -8,14 +8,6 @@
       content: ' *';
       color: #dd3d36;
     }
-
-    &.error {
-      input[type="text"],
-      select {
-        border-left-color: $error;
-        border-bottom-color: $error;
-      }
-    }
   }
 
   label {
@@ -30,9 +22,6 @@
   }
 
   .note, .message {
-    border-left: 4px solid currentColor;
-    padding-left: .35em;
-
     &.success {
       color: $success;
     }
@@ -45,7 +34,11 @@
   .note {
     margin: 0;
     font-size: 0.71111em;
-    border-width: 1px;
+  }
+
+  .message {
+    border-left: 4px solid currentColor;
+    padding-left: .56em;
   }
 
   button {
