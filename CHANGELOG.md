@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.3 - 2019-04-12
+**Fixed**
+
+* Add missing submit button :/
+
 ## 1.1.2 - 2019-04-12
 **Changed**
 

@@ -41,7 +41,7 @@ function openemm_form( $settings ) {
 	ob_start(); ?>
 
 <form class="openemm-form" method="post" action="<?php echo add_query_arg( array( 'destination' => $wp->request ), home_url( 'openemm/subscribe' ) ) ?>">
-	<?php foreach ( array_filter( $settings['form'] ) as $field => $status ) {
+	<?php foreach ( $settings['form'] as $field => $status ) {
 	    if ( $field == 'button' ) { ?>
             <button>
 			    <?php echo $status ? $status : __( 'Subscribe', 'openemm' ); ?>
@@ -49,6 +49,9 @@ function openemm_form( $settings ) {
             </button>
         <?php continue;
 	    }
+
+	    // 0 == 'disabled'
+	    if ( !$status ) continue;
 
 		$options = array(
 		    'required' => $status > 1,
