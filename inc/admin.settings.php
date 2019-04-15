@@ -7,8 +7,8 @@ add_action( 'admin_init', function() {
 
 // styles and scripts
 add_action( 'admin_enqueue_scripts', function() {
-    wp_enqueue_script( 'openemm-admin', OPENEMM_PLUGIN_URL . 'js/admin.settings.js', array( 'jquery-ui-sortable' ), '20190404', true );
-    wp_enqueue_style( 'openemm-admin', OPENEMM_PLUGIN_URL . 'css/admin.settings.css', array(), '20190404' );
+    wp_enqueue_script( 'openemm-admin', OPENEMM_PLUGIN_URL . 'js/admin.settings.js', array( 'jquery-ui-sortable' ), '20190411', true );
+    wp_enqueue_style( 'openemm-admin', OPENEMM_PLUGIN_URL . 'css/admin.settings.css', array(), '20190411' );
 } );
 
 // register admin menu item and settings page

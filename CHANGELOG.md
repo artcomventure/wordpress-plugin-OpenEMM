@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.4 - 2019-04-12
+**Fixed**
+
+* Cache busting.
+
 ## 1.1.3 - 2019-04-12
 **Fixed**
 

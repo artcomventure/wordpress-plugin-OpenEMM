@@ -4,7 +4,7 @@
  * Plugin Name: OpenEMM
  * Plugin URI: https://github.com/artcomventure/wordpress-plugin-openemm
  * Description: OpenEMM Newsletter subscription.
- * Version: 1.1.3
+ * Version: 1.1.4
  * Text Domain: openemm
  * Author: artcom venture GmbH
  * Author URI: http://www.artcom-venture.de/
@@ -19,8 +19,8 @@ if ( ! defined( 'OPENEMM_PLUGIN_BASENAME' ) ) define( 'OPENEMM_PLUGIN_BASENAME',
 
 add_action( 'wp_enqueue_scripts', 'openemm_scripts' );
 function openemm_scripts() {
-	wp_enqueue_script( 'openemm', OPENEMM_PLUGIN_URL . 'js/scripts.js', array(), '20190405', true );
-	wp_enqueue_style( 'openemm', OPENEMM_PLUGIN_URL . 'css/styles.css', array( 'dashicons' ), '20190405' );
+	wp_enqueue_script( 'openemm', OPENEMM_PLUGIN_URL . 'js/scripts.js', array(), '20190411', true );
+	wp_enqueue_style( 'openemm', OPENEMM_PLUGIN_URL . 'css/styles.css', array( 'dashicons' ), '20190412' );
 }
 
 // i18n

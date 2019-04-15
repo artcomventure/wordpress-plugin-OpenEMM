@@ -45,6 +45,11 @@ _We test our plugin through its paces, but we advise you to take all safety prec
 Don't hesitate! [Issues](https://github.com/artcomventure/wordpress-plugin-OpenEMM/issues) welcome.
 == Changelog ==
 
+= 1.1.4 - 2019-04-12 =
+**Fixed**
+
+* Cache busting.
+
 = 1.1.3 - 2019-04-12 =
 **Fixed**
 
