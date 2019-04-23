@@ -19,8 +19,8 @@ if ( ! defined( 'OPENEMM_PLUGIN_BASENAME' ) ) define( 'OPENEMM_PLUGIN_BASENAME',
 
 add_action( 'wp_enqueue_scripts', 'openemm_scripts' );
 function openemm_scripts() {
-	wp_enqueue_script( 'openemm', OPENEMM_PLUGIN_URL . 'js/scripts.js', array(), '20190411', true );
-	wp_enqueue_style( 'openemm', OPENEMM_PLUGIN_URL . 'css/styles.css', array( 'dashicons' ), '20190412' );
+	wp_enqueue_script( 'openemm', OPENEMM_PLUGIN_URL . 'js/scripts.js', array(), '1.1.0', true );
+	wp_enqueue_style( 'openemm', OPENEMM_PLUGIN_URL . 'css/styles.css', array( 'dashicons' ), '1.1.5' );
 }
 
 // i18n

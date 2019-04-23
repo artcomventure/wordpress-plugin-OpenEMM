@@ -84,9 +84,17 @@
     visibility: visible;
 }
 
+#openemm
+{
+    padding: 0;
+}
+
 #openemm .message
 {
+    margin: 0;
+    padding: 0;
     text-align: center;
+    border: 0;
 }
 
 #openemm .message p

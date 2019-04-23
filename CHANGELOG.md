@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.5 - 2019-04-23
+**Fixed**
+
+* Reset styles.
+
 ## 1.1.4 - 2019-04-12
 **Fixed**
 

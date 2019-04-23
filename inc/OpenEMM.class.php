@@ -36,7 +36,7 @@ class OpenEMM
 
         if ( $response ) {
             $this->_soap = new WsseSoapClient( $wsdlUrl, $username, $password, $prefix, $options );
-            // list all available soap functions
+            // list of all available webservices
 //            var_dump( $this->_soap->__getFunctions() ); die;
         }
         else throw new Exception( sprintf( __( 'Unable to load webservice at %s', 'openemm' ), $wsdlUrl ) );
