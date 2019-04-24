@@ -35,5 +35,5 @@ get_header();
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-<?php
+<?php get_sidebar();
 get_footer();

@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.6 - 2019-04-24
+**Fixed**
+
+* Add missing sidebar.
+
 ## 1.1.5 - 2019-04-23
 **Fixed**
 

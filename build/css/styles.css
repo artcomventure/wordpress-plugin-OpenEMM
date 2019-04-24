@@ -84,11 +84,6 @@
     visibility: visible;
 }
 
-#openemm
-{
-    padding: 0;
-}
-
 #openemm .message
 {
     margin: 0;
@@ -99,7 +94,8 @@
 
 #openemm .message p
 {
-    margin: 0 auto; 
+    margin-right: auto;
+    margin-left: auto; 
     padding: 1.5em;
 }
 

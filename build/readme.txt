@@ -45,6 +45,11 @@ _We test our plugin through its paces, but we advise you to take all safety prec
 Don't hesitate! [Issues](https://github.com/artcomventure/wordpress-plugin-OpenEMM/issues) welcome.
 == Changelog ==
 
+= 1.1.6 - 2019-04-24 =
+**Fixed**
+
+* Add missing sidebar.
+
 = 1.1.5 - 2019-04-23 =
 **Fixed**
 

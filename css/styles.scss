@@ -74,48 +74,45 @@
   }
 }
 
-#openemm {
+#openemm .message {
+  text-align: center;
+  margin: 0;
   padding: 0;
+  border: 0;
 
-  .message {
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    border: 0;
+  p {
+    padding: 1.5em;
+    margin-right: auto;
+    margin-left: auto;
 
-    p {
-      padding: 1.5em;
-      margin: 0 auto;
+    &:before {
+      font-family: dashicons;
+      font-size: 5em;
+      pointer-events: none;
+      display: block;
+      line-height: 1;
+    }
+  }
 
-      &:before {
-        font-family: dashicons;
-        font-size: 5em;
-        pointer-events: none;
-        display: block;
-        line-height: 1;
-      }
+  &.success p {
+    background-color: $success;
+    @if lightness($success) < 80 {
+      color: #fff;
     }
 
-    &.success p {
-      background-color: $success;
-      @if lightness($success) < 80 {
-        color: #fff;
-      }
+    &:before {
+      content: "\f147";
+    }
+  }
 
-      &:before {
-        content: "\f147";
-      }
+  &.error p {
+    background-color: $error;
+    @if lightness($error) < 80 {
+      color: #fff;
     }
 
-    &.error p {
-      background-color: $error;
-      @if lightness($error) < 80 {
-        color: #fff;
-      }
-
-      &:before {
-        content: "\f335";
-      }
+    &:before {
+      content: "\f335";
     }
   }
 }
