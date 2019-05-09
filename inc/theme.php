@@ -32,7 +32,7 @@ function openemm_form( $settings ) {
 
 		// no errors aka form is valid ... do register/subscribe
 		if ( $isValid = !$errors ) {
-		    $message = openemm_add_subscriber( $_POST['email'], array_filter($data) );
+		    $message = openemm_add_subscriber( $_POST['email'], array_filter( $data, function( $value ) { return $value != ''; } ) );
         }
 	}
 

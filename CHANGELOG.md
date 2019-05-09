@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.1 - 2019-05-09
+**Fixed**
+
+* Subscriber data filter (missing gender).
+
 ## 1.2.0 - 2019-05-09
 **Added**
 

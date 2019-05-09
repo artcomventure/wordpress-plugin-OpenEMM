@@ -45,6 +45,11 @@ _We test our plugin through its paces, but we advise you to take all safety prec
 Don't hesitate! [Issues](https://github.com/artcomventure/wordpress-plugin-OpenEMM/issues) welcome.
 == Changelog ==
 
+= 1.2.1 - 2019-05-09 =
+**Fixed**
+
+* Subscriber data filter (missing gender).
+
 = 1.2.0 - 2019-05-09 =
 **Added**
 
