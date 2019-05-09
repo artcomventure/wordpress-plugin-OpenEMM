@@ -4,19 +4,18 @@
  * Plugin Name: OpenEMM
  * Plugin URI: https://github.com/artcomventure/wordpress-plugin-openemm
  * Description: OpenEMM Newsletter subscription.
- * Version: 1.1.6
+ * Version: 1.2.0
  * Text Domain: openemm
  * Author: artcom venture GmbH
  * Author URI: http://www.artcom-venture.de/
  */
-
-// https://github.com/ronoaldo/openemm/blob/master/openemm-ws/src/main/scripts/WSSESoapClient.php
 
 if ( ! defined( 'OPENEMM_PLUGIN_URL' ) ) define( 'OPENEMM_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 if ( ! defined( 'OPENEMM_PLUGIN_DIR' ) ) define( 'OPENEMM_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 if ( ! defined( 'OPENEMM_PLUGIN_FILE' ) ) define( 'OPENEMM_PLUGIN_FILE', __FILE__ );
 if ( ! defined( 'OPENEMM_PLUGIN_BASENAME' ) ) define( 'OPENEMM_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 
+// enqueue scripts and styles
 add_action( 'wp_enqueue_scripts', 'openemm_scripts' );
 function openemm_scripts() {
 	wp_enqueue_script( 'openemm', OPENEMM_PLUGIN_URL . 'js/scripts.js', array(), '1.1.0', true );
@@ -47,6 +46,9 @@ function openemm_get_settings( $form = array() ) {
 		'email' => array( 'sender' => '', 'subject' => '', 'body' => '' )
 	);
 
+    // allow custom fields but make sure to keep default ones
+    $defaults['form'] = apply_filters( 'openemm_form_fields', $defaults['form'] ) + $defaults['form'];
+
     // merge defaults
 	$settings += array( 'form' => array() );
 	$settings['form'] = $form + $settings['form'];
@@ -58,6 +60,7 @@ function openemm_get_settings( $form = array() ) {
 		elseif ( !isset($settings[$group]) ) $settings[$group] = $value;
 	}
 
+	// only allow items mentioned in $defaults
     foreach ( $settings as $group => $fields ) {
     	if ( !key_exists( $group, $defaults ) ) {
     		unset($settings[$group]);
@@ -76,7 +79,8 @@ function openemm_get_settings( $form = array() ) {
 
 	// email is mandatory
     $settings['form']['email'] = 2;
-    // wrong value => disable
+
+    // wrong form field value => disable
 	$settings['form'] = array_combine( array_keys($settings['form']), array_map( function( $value, $field ) {
 		if ( $field == 'button' ) return $value;
 		return in_array( intval($value), array(0,1,2) ) ? intval($value) : 0;
@@ -85,6 +89,7 @@ function openemm_get_settings( $form = array() ) {
     return $settings;
 }
 
+// get specific settings
 function openemm_get_setting( $setting, $form = array() ) {
 	$settings = openemm_get_settings( $form );
 
@@ -185,6 +190,11 @@ function openemm_get_label( $field, $echo = true ) {
 		case 'wsdlUrl':
 			$label = __( 'WSDL URL', 'openemm' );
 			break;
+	}
+
+	// allow custom labels ... but only for form
+	if ( array_key_exists( $field, openemm_get_settings()['form'] ) ) {
+		$label = apply_filters( 'openemm_label', $label, $field );
 	}
 
 	if ( !$echo ) return $label;

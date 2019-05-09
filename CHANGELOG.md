@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.0 - 2019-05-09
+**Added**
+
+* Filters for custom form fields and labels.
+
 ## 1.1.6 - 2019-04-24
 **Fixed**
 
