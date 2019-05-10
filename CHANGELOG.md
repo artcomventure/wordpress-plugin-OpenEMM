@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.2 - 2019-05-10
+**Fixed**
+
+* Maybe use template from sub-theme.
+
 ## 1.2.1 - 2019-05-09
 **Fixed**
 

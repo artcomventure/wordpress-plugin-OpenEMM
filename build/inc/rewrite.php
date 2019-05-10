@@ -46,8 +46,10 @@ add_action( 'template_redirect', function() {
 			$_SESSION['openemm'] = openemm_confirm_subscriber( $_GET['hash'] ?: '' );
 
 			add_filter( 'template_include', function() {
-				if ( !file_exists( $template = get_template_directory() . '/page--openemm.php' ) ) {
-					$template = OPENEMM_PLUGIN_DIR . 'page.php';
+				if ( !file_exists( $template = get_stylesheet_directory() . '/page--openemm.php' ) ) {
+				    if ( !file_exists( $template = get_template_directory() . '/page--openemm.php' ) ) {
+                        $template = OPENEMM_PLUGIN_DIR . 'page.php';
+                    }
 				}
 
 				return $template;
