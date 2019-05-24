@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.3 - 2019-05-24
+**Fixed**
+
+* Email 'From:' header. :/
+
 ## 1.2.2 - 2019-05-10
 **Fixed**
 

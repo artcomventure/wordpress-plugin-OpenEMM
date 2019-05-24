@@ -91,7 +91,7 @@ function openemm_add_subscriber( $email, $data = array() ) {
 	    if ( strpos( $message, '[openemm_confirmation_link]' ) === false ) $message .= "\n\n[openemm_confirmation_link]";
 	    $message = str_replace('[openemm_confirmation_link]', add_query_arg( array( 'hash' => $hash ), home_url( 'openemm/confirm' ) ), $message);
 
-	    $headers = 'From: ' . ($settings['email']['subject'] ? $settings['email']['subject'] : get_bloginfo( 'title' ) . ' <' . get_option( 'admin_email' ) . '>' ) . "\r\n";
+	    $headers = 'From: ' . ($settings['email']['sender'] ? $settings['email']['sender'] : get_bloginfo( 'title' ) . ' <' . get_option( 'admin_email' ) . '>' ) . "\r\n";
 
 	    wp_mail( $email, $subject, trim($message), $headers );
 
@@ -135,6 +135,8 @@ function openemm_confirm_subscriber( $hash ) {
 			$wpdb->update( $table_name, array(
 				'confirmed' => current_time( 'mysql' )
 			), array( 'hash' => $hash ), array( '%s' ), array( '%s' ) );
+
+			do_action( 'openemm_subscription_confirmed', $subscriber );
 		}
 		else return array(
 			'type' => 'error',

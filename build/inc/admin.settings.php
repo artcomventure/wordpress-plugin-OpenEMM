@@ -197,6 +197,9 @@ add_action( 'admin_menu', function() {
                             <input type="text" class="large-text" name="openemm[email][sender]"
                                    value="<?php echo $settings['email']['sender']; ?>"
                                    placeholder="<?php echo get_bloginfo( 'title' ) . ' <' . get_option( 'admin_email' ) . '>'; ?>" />
+                            <p class="description">
+                                <?php printf( __( '%s or in format %s', 'openemm' ), '<code>' . __( 'john.doe@example.com', 'openemm' ) . '</code>', '<code>' . sprintf( __( '%s &lt;%s&gt;', 'openemm' ), __( 'John Doe', 'openemm' ), __( 'john.doe@example.com', 'openemm' ) ) . '</code>' ); ?>
+                            </p>
                         </td>
                     </tr>
 

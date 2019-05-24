@@ -14,6 +14,9 @@ msgstr ""
 msgid "%s is required."
 msgstr ""
 
+msgid "%s or in format %s"
+msgstr ""
+
 msgid "<i>All</i> the following values can be overridden wherever you insert the shortcode. Even the mailing <code>list=\"\"</code>."
 msgstr ""
 
@@ -63,6 +66,12 @@ msgid "Gender"
 msgstr ""
 
 msgid "HTML"
+msgstr ""
+
+msgid "John Doe"
+msgstr ""
+
+msgid "john.doe@example.com"
 msgstr ""
 
 msgid "Last Name"

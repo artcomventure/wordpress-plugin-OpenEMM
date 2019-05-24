@@ -45,6 +45,11 @@ _We test our plugin through its paces, but we advise you to take all safety prec
 Don't hesitate! [Issues](https://github.com/artcomventure/wordpress-plugin-OpenEMM/issues) welcome.
 == Changelog ==
 
+= 1.2.3 - 2019-05-24 =
+**Fixed**
+
+* Email 'From:' header. :/
+
 = 1.2.2 - 2019-05-10 =
 **Fixed**
 
