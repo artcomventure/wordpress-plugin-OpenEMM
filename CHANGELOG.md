@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.4 - 2019-06-06
+**Changed**
+
+* $_SESSION vs WP's transient
+
 ## 1.2.3 - 2019-05-24
 **Fixed**
 

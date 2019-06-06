@@ -8,13 +8,12 @@
  * @since 1.1
  */
 
-if ( empty($_SESSION['openemm']) ) {
+if ( !$message = get_transient( 'openemm' ) ) {
     wp_redirect( home_url() );
     exit;
 }
 
-$message = $_SESSION['openemm'];
-unset($_SESSION['openemm']);
+delete_transient( 'openemm' );
 
 get_header();
 ?>

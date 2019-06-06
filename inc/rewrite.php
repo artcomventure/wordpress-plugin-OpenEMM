@@ -42,8 +42,7 @@ add_action( 'template_redirect', function() {
 			exit;
 
 		case 'confirm':
-			session_start();
-			$_SESSION['openemm'] = openemm_confirm_subscriber( $_GET['hash'] ?: '' );
+            set_transient( 'openemm', openemm_confirm_subscriber( $_GET['hash'] ?: '' ) );
 
 			add_filter( 'template_include', function() {
 				if ( !file_exists( $template = get_stylesheet_directory() . '/page--openemm.php' ) ) {
