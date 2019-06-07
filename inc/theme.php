@@ -70,7 +70,7 @@ function openemm_form( $settings ) {
 				$options['options'] = array(
 					__( 'Mr.', 'openemm' ),
 					__( 'Mrs.', 'openemm' ),
-					__( 'Unknown' )
+					__( 'Unknown', 'openemm' )
 				);
 				break;
 

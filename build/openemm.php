@@ -4,7 +4,7 @@
  * Plugin Name: OpenEMM
  * Plugin URI: https://github.com/artcomventure/wordpress-plugin-openemm
  * Description: OpenEMM Newsletter subscription.
- * Version: 1.2.4
+ * Version: 1.2.5
  * Text Domain: openemm
  * Author: artcom venture GmbH
  * Author URI: http://www.artcom-venture.de/

@@ -143,6 +143,9 @@ msgstr ""
 msgid "Unable to load webservice at %s"
 msgstr ""
 
+msgid "Unknown"
+msgstr ""
+
 msgid "URL to the OpenEMM webservice file."
 msgstr ""
 

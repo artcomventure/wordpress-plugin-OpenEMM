@@ -84,7 +84,7 @@ msgid "Mr."
 msgstr "Herr"
 
 msgid "Mrs."
-msgstr "frau"
+msgstr "Frau"
 
 msgid "OpenEMM Settings"
 msgstr "OpenEMM Einstellungen"
@@ -124,6 +124,9 @@ msgstr "Um das Abonnementformular anzuzeigen, fügen Sie den Shortcode %s in den
 
 msgid "Unable to load webservice at %s"
 msgstr "Webservice kann unter %s nicht geladen werden"
+
+msgid "Unknown"
+msgstr "Unbekannt"
 
 msgid "URL to the OpenEMM webservice file."
 msgstr "URL zur OpenEMM-Webservice-Datei."
