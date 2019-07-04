@@ -26,18 +26,11 @@ add_action( 'admin_menu', function() {
     <form id="openemm-settings-form" method="post" action="options.php">
         <?php settings_fields( 'openemm' );
         $settings = openemm_get_settings();
-        $OpenEMM = OpenEMM( true ); // test webservice ?>
+        $OpenEMM = OpenEMM( true ); // test webservice
 
-        <div class="nav-tab-wrapper hide-if-no-js">
-            <a href="#openemm-general-settings" class="nav-tab<?php echo empty($settings['mailinglist']) ? ' error' : '' ?>"><?php _e( 'General' ); ?></a>
-            <a href="#openemm-webservice-settings" class="nav-tab<?php echo isset($OpenEMM) && is_string($OpenEMM) ? ' error' : ''; ?>"><?php _e( 'Webservice', 'openemm' ); ?></a>
-            <a href="#openemm-form-settings" class="nav-tab"><?php _e( 'Form', 'openemm' ); ?></a>
-            <a href="#openemm-messages-settings" class="nav-tab"><?php _e( 'Messages', 'openemm' ); ?></a>
-            <a href="#openemm-email-settings" class="nav-tab"><?php _e( 'Double Opt In Email', 'openemm' ); ?></a>
-        </div>
+        // error messages
 
-	    <?php // error messages
-        if ( empty($settings['mailinglist']) ) printf(
+	    if ( empty($settings['mailinglist']) ) printf(
 		    '<div class="notice notice-%1$s inline"><p>%2$s</p></div>',
 		    esc_attr( 'error' ), sprintf( __( '%s is required.', 'openemm' ), '<code>' . __( 'Mailing List ID', 'openemm' ) . '</code>' )
 	    );
@@ -46,6 +39,14 @@ add_action( 'admin_menu', function() {
 		    '<div class="notice notice-%1$s inline"><p>%2$s</p></div>',
 		    esc_attr( 'error' ), $OpenEMM
 	    ); ?>
+
+        <div class="nav-tab-wrapper hide-if-no-js">
+            <a href="#openemm-general-settings" class="nav-tab<?php echo empty($settings['mailinglist']) ? ' error' : '' ?>"><?php _e( 'General' ); ?></a>
+            <a href="#openemm-webservice-settings" class="nav-tab<?php echo isset($OpenEMM) && is_string($OpenEMM) ? ' error' : ''; ?>"><?php _e( 'Webservice', 'openemm' ); ?></a>
+            <a href="#openemm-form-settings" class="nav-tab"><?php _e( 'Form', 'openemm' ); ?></a>
+            <a href="#openemm-notifications-settings" class="nav-tab"><?php _e( 'Notifications', 'openemm' ); ?></a>
+            <a href="#openemm-email-settings" class="nav-tab"><?php _e( 'Double Opt In Email', 'openemm' ); ?></a>
+        </div>
 
         <div id="openemm-general-settings">
             <h2 class="title hide-if-js"><?php _e( 'General' ); ?></h2>
@@ -164,8 +165,8 @@ add_action( 'admin_menu', function() {
             </table>
         </div>
 
-        <div id="openemm-messages-settings">
-            <h2 class="title hide-if-js"><?php _e( 'Messages', 'openemm' ); ?></h2>
+        <div id="openemm-notifications-settings">
+            <h2 class="title hide-if-js"><?php _e( 'Notifications', 'openemm' ); ?></h2>
 
             <table class="form-table">
                 <tbody>
@@ -180,6 +181,36 @@ add_action( 'admin_menu', function() {
                         </td>
                     </tr>
                 <?php endforeach; ?>
+
+                </tbody>
+            </table>
+
+            <h3><?php _e( 'Email notification', 'openemm' ) ?></h3>
+
+            <p><?php _e( 'In case <i>you</i> want to be notified when someone subscribe your newsletter.', 'openemm' ); ?></p>
+
+            <table class="form-table">
+                <tbody>
+
+                <tr valign="top">
+                    <th scope="row"><label><?php _e( 'Recipient', 'openemm' ); ?></label></th>
+                    <td>
+                        <input type="text" class="large-text" name="openemm[notification][recipient]"
+                               value="<?php echo $settings['notification']['recipient']; ?>" />
+                        <p class="description">
+					        <?php _e( 'Comma separated list of emails which gets notification on newsletter form submit.', 'openemm' ); ?>
+                        </p>
+                    </td>
+                </tr>
+
+                <tr valign="top">
+                    <th scope="row"><label><?php _e( 'Subject', 'openemm' ); ?></label></th>
+                    <td>
+                        <input type="text" class="large-text" name="openemm[notification][subject]"
+                               value="<?php echo $settings['notification']['subject']; ?>"
+                               placeholder="<?php _e( 'New newsletter subscription (maybe not confirmed yet)', 'openemm' ); ?>" />
+                    </td>
+                </tr>
 
                 </tbody>
             </table>

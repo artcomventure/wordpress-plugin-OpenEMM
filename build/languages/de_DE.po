@@ -32,6 +32,9 @@ msgstr "Nachricht"
 msgid "Broken Confirmation Link"
 msgstr "Kaputter Bestätigungslink"
 
+msgid "Comma separated list of emails which gets notification on newsletter form submit."
+msgstr "Kommagetrennte Liste der E-Mails, die beim Absenden des Newsletter-Formulars benachrichtigt werden sollen."
+
 msgid "Confirm your newsletter subscription from %s"
 msgstr "Bestätigen Sie Ihr Newsletter-Abonnement von %s"
 
@@ -50,6 +53,9 @@ msgstr "Double Opt In E-Mail"
 msgid "Email Address"
 msgstr "E-Mail-Adresse"
 
+msgid "Email notification"
+msgstr "E-Mail-Benachrichtigungen"
+
 msgid "First Name"
 msgstr "Vorname"
 
@@ -60,7 +66,10 @@ msgid "Form"
 msgstr "Formular"
 
 msgid "Gender"
-msgstr "Geschlecht"
+msgstr "Anrede"
+
+msgid "In case <i>you</i> want to be notified when someone subscribe your newsletter."
+msgstr "Falls <i>du</i> benachrichtigt werden möchtest, wenn sich jemand für deinen Newsletter anmeldet."
 
 msgid "John Doe"
 msgstr "Max Mustermann"
@@ -77,14 +86,17 @@ msgstr "Mail-Typ"
 msgid "Mailing List ID"
 msgstr "Mailing-Listen-ID"
 
-msgid "Messages"
-msgstr "Nachrichten"
-
 msgid "Mr."
 msgstr "Herr"
 
 msgid "Mrs."
 msgstr "Frau"
+
+msgid "New newsletter subscription (maybe not confirmed yet)"
+msgstr "Neues Newsletter-Abonnement (möglicherweise noch nicht bestätigt)"
+
+msgid "Notifications"
+msgstr "Benachrichtigungen"
 
 msgid "OpenEMM Settings"
 msgstr "OpenEMM Einstellungen"
@@ -94,6 +106,9 @@ msgstr "Bitte überprüfen Sie Ihr E-Mail-Postfach, um Ihr Newsletter-Abonnement
 
 msgid "Possible values: %s"
 msgstr "Mögliche Werte: %s"
+
+msgid "Recipient"
+msgstr "Empfänger"
 
 msgid "required"
 msgstr "erforderlich"
@@ -115,6 +130,9 @@ msgstr "Der Bestätigungslink ist kaputt. Bitte abonnieren Sie unseren Newslette
 
 msgid "This email address already subscribed to our newsletter."
 msgstr "Diese E-Mail-Adresse hat unseren Newsletter bereits abonniert."
+
+msgid "This email was automatically send from %s"
+msgstr "Diese E-Mail wurde automatisch von %s versendet"
 
 msgid "This value"
 msgstr "Dieser Wert"

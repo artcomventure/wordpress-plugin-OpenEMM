@@ -84,8 +84,32 @@ function openemm_add_subscriber( $email, $data = array() ) {
 	    'data' => serialize($data)
     ) );
 
+	$settings = openemm_get_settings();
+
+    // send (intern) email notification
+	if ( $settings['notification']['recipient'] ) {
+		$subject = trim($settings['notification']['subject']) ? $settings['notification']['subject'] : __( 'New newsletter subscription (maybe not confirmed yet)', 'openemm' );
+		$message = '';
+		foreach ( array('email' => $email) + $data as $field => $value ) {
+			if ( $field == 'button' ) continue;
+
+			if ( $field == 'gender' ) $value = array( __( 'Mr.', 'openemm' ), __( 'Mrs.', 'openemm' ), '' )[$value];
+			elseif ( $field == 'mailtype' ) $value = array( __( 'Text', 'openemm' ), __( 'HTML' ), __( 'Offline-HTML', 'openemm' ) )[$value];
+			if ( ($value = trim(apply_filters( 'openemm_field_value', $value, $field ))) === '' ) continue;
+
+			$message .= openemm_get_label( $field, false ) . ": {$value}\n\r";
+		}
+		$message .= "\n\r---\n\r" . sprintf( __( 'This email was automatically send from %s', 'openemm' ), home_url() );
+		$headers = 'From: ' . get_bloginfo( 'title' ) . ' <' . get_option( 'admin_email' ) . '>' . "\r\n";
+
+		foreach ( array_map( 'trim', explode( ',', $settings['notification']['recipient'] ) ) as $recipient ) {
+			if ( !is_email( $recipient ) ) continue;
+			wp_mail( $recipient, $subject, $message, $headers );
+		}
+	}
+
 	// send confirmation email
-    if ( ($settings = openemm_get_settings())['doubleoptin'] ) {
+    if ( $settings['doubleoptin'] ) {
     	if ( !$subject = $settings['email']['subject'] ) $subject = sprintf( __( 'Confirm your newsletter subscription from %s', 'openemm' ), get_option( 'home' ) );
 	    $message = $settings['email']['body'];
 	    if ( strpos( $message, '[openemm_confirmation_link]' ) === false ) $message .= "\n\n[openemm_confirmation_link]";

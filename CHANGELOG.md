@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.0 - 2019-07-04
+**Added**
+
+* Email notification.
+
 ## 1.2.5 - 2019-06-07
 **Fixed**
 

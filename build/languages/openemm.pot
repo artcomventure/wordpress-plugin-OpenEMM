@@ -35,6 +35,9 @@ msgstr ""
 msgid "Button"
 msgstr ""
 
+msgid "Comma separated list of emails which gets notification on newsletter form submit."
+msgstr ""
+
 msgid "Confirm your newsletter subscription from %s"
 msgstr ""
 
@@ -53,6 +56,9 @@ msgstr ""
 msgid "Email Address"
 msgstr ""
 
+msgid "Email notification"
+msgstr ""
+
 msgid "First Name"
 msgstr ""
 
@@ -66,6 +72,9 @@ msgid "Gender"
 msgstr ""
 
 msgid "HTML"
+msgstr ""
+
+msgid "In case <i>you</i> want to be notified when someone subscribe your newsletter."
 msgstr ""
 
 msgid "John Doe"
@@ -83,13 +92,16 @@ msgstr ""
 msgid "Mailing List ID"
 msgstr ""
 
-msgid "Messages"
-msgstr ""
-
 msgid "Mr."
 msgstr ""
 
 msgid "Mrs."
+msgstr ""
+
+msgid "New newsletter subscription (maybe not confirmed yet)"
+msgstr ""
+
+msgid "Notifications"
 msgstr ""
 
 msgid "Offline-HTML"
@@ -108,6 +120,9 @@ msgid "Please check your email mailbox to confirm your newsletter subscription."
 msgstr ""
 
 msgid "Possible values: %s"
+msgstr ""
+
+msgid "Recipient"
 msgstr ""
 
 msgid "required"
@@ -132,6 +147,9 @@ msgid "The confirmation link is broken. Please subscribe to our newsletter again
 msgstr ""
 
 msgid "This email address already subscribed to our newsletter."
+msgstr ""
+
+msgid "This email was automatically send from %s"
 msgstr ""
 
 msgid "This value"

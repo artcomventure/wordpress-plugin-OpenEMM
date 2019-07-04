@@ -4,7 +4,7 @@
  * Plugin Name: OpenEMM
  * Plugin URI: https://github.com/artcomventure/wordpress-plugin-openemm
  * Description: OpenEMM Newsletter subscription.
- * Version: 1.2.5
+ * Version: 1.3.0
  * Text Domain: openemm
  * Author: artcom venture GmbH
  * Author URI: http://www.artcom-venture.de/
@@ -43,7 +43,8 @@ function openemm_get_settings( $form = array() ) {
 		'webservice' => array( 'wsdlUrl' => '', 'username' => '', 'password' => '' ),
 		'form' => array( 'gender' => 0, 'title' => 0, 'email' => 0, 'firstname' => 0, 'lastname' => 0, 'mailtype' => 0, 'button' => '' ),
 		'messages' => array( 'double_opt_in' => '', 'broken_confirmation_link' => '', 'already_subscribed' => '', 'confirmed' => '' ),
-		'email' => array( 'sender' => '', 'subject' => '', 'body' => '' )
+		'email' => array( 'sender' => '', 'subject' => '', 'body' => '' ),
+		'notification' => array( 'recipient' => '', 'subject' => '' )
 	);
 
     // allow custom fields but make sure to keep default ones
