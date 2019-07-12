@@ -26,6 +26,9 @@ msgstr "Bereits abonniert"
 msgid "An error has occurred. That should not have happened! Please try again."
 msgstr "Ein Fehler ist aufgetreten. Das hätte nicht passieren dürfen! Bitte versuche es erneut."
 
+msgid "at %s"
+msgstr "unter %s"
+
 msgid "Body"
 msgstr "Nachricht"
 
@@ -140,8 +143,8 @@ msgstr "Dieser Wert"
 msgid "To display the subscription form insert the shortcode %s into the editor e.g. by using the %s."
 msgstr "Um das Abonnementformular anzuzeigen, fügen Sie den Shortcode %s in den Editor ein, z.B. im %s."
 
-msgid "Unable to load webservice at %s"
-msgstr "Webservice kann unter %s nicht geladen werden"
+msgid "Unable to load webservice%s."
+msgstr "Webservice kann%s nicht geladen werden."
 
 msgid "Unknown"
 msgstr "Unbekannt"

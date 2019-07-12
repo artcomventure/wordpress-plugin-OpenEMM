@@ -55,7 +55,7 @@ add_action( 'admin_menu', function() {
                 <tbody>
 
                 <tr valign="top">
-                    <th scope="row"><label for="openemm-general-mailinglist-setting" class="required"><?php _e( 'Mailing List ID' ) ?></label></th>
+                    <th scope="row"><label for="openemm-general-mailinglist-setting" class="required"><?php _e( 'Mailing List ID', 'openemm' ) ?></label></th>
                     <td>
                         <input id="openemm-general-mailinglist-setting" type="text" class="regular-text" name="openemm[mailinglist]"
                                value="<?php echo $settings['mailinglist']; ?>" />
@@ -66,7 +66,7 @@ add_action( 'admin_menu', function() {
                 </tr>
 
                 <tr valign="top">
-                    <th scope="row"><?php _e( 'Double Opt In' ) ?></th>
+                    <th scope="row"><?php _e( 'Double Opt In', 'openemm' ) ?></th>
                     <td>
                         <label><input type="checkbox" name="openemm[doubleoptin]"
                             value="1"<?php checked( '1', $settings['doubleoptin'] ); ?> />

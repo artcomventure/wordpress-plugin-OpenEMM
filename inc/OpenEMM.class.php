@@ -39,7 +39,7 @@ class OpenEMM
             // list of all available webservices
 //            var_dump( $this->_soap->__getFunctions() ); die;
         }
-        else throw new Exception( sprintf( __( 'Unable to load webservice at %s', 'openemm' ), $wsdlUrl ) );
+        else throw new Exception( sprintf( __( 'Unable to load webservice%s.', 'openemm' ), $wsdlUrl ? ' ' . __('at %s', $wsdlUrl, 'openemm') : '' ) );
     }
 
     /**

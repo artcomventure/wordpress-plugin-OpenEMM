@@ -1,8 +1,8 @@
 {
   "dependencies": {},
   "devDependencies": {
-    "del": "^4.1.1",
-    "gulp": "^4.0.1",
+    "del": "^5.0.0",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-concat": "^2.6.1",
     "gulp-csscomb": "^3.0.8",

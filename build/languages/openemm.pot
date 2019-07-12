@@ -26,6 +26,9 @@ msgstr ""
 msgid "An error has occurred. That should not have happened! Please try again."
 msgstr ""
 
+msgid "at %s"
+msgstr ""
+
 msgid "Body"
 msgstr ""
 
@@ -158,7 +161,7 @@ msgstr ""
 msgid "To display the subscription form insert the shortcode %s into the editor e.g. by using the %s."
 msgstr ""
 
-msgid "Unable to load webservice at %s"
+msgid "Unable to load webservice%s."
 msgstr ""
 
 msgid "Unknown"
